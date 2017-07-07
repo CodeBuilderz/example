@@ -18,9 +18,6 @@ public class Main {
             }
         });
 
-        Collections.sort(appleList, (p1, p2) -> p1.getName().compareTo(p2.getName()));
-        Collections.sort(appleList, Comparator.comparing(Apple::getWeight));
-
         // 쓰레드
         Runnable r1 = new Runnable() {
             @Override
