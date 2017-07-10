@@ -1,5 +1,7 @@
 package example;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +20,9 @@ public class Main {
             }
         });
 
+        Collections.sort(appleList, (p1, p2) -> p1.getName().compareTo(p2.getName()));
+        Collections.sort(appleList, Comparator.comparing(Apple::getName));
+
         // 쓰레드
         Runnable r1 = new Runnable() {
             @Override
@@ -25,7 +30,6 @@ public class Main {
                 System.out.println("Hello world one!");
             }
         };
-
         r1.run();
 
         /*
@@ -40,6 +44,13 @@ public class Main {
             }
         });
 
+        button.addActionListener(e -> {
+            System.out.println("111");
+            System.out.println("2222");
+        });
+
+
+
         // 특정 항목 필터링
         List<Apple> filteringAppleList = new ArrayList<>();
         for (Apple apple : appleList) {
@@ -47,6 +58,8 @@ public class Main {
                 filteringAppleList.add(apple);
             }
         }
+
+        
 
         // List -> Map로 변환
         Map<String, Apple> appleMap = new HashMap<>();
