@@ -80,6 +80,8 @@ public class Main {
             }
         }
 
+
+
         List<Apple> distinctApple2List = appleList.stream()
                 .distinct()
                 .collect(toList());
