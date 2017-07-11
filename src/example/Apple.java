@@ -5,6 +5,12 @@ public class Apple {
     private String name;
     private String color;
 
+    public Apple(int weight, String name, String color) {
+        this.weight = weight;
+        this.name = name;
+        this.color = color;
+    }
+
     public int getWeight() {
         return weight;
     }
