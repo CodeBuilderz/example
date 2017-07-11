@@ -96,6 +96,9 @@ public class Main {
                 .collect(toList());
 
         nameList.forEach(System.out::println);
+
+
+        
         //
     }
 }
