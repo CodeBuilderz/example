@@ -13,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //dw
         List<Apple> appleList = new ArrayList<>();
         appleList.add(new Apple(100, "RedApple", "Red"));
         appleList.add(new Apple(150, "BlueApple", "Blue"));
