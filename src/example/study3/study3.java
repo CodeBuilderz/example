@@ -1,5 +1,7 @@
 package example.study3;
 
+import example.Apple;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -8,22 +10,23 @@ public class study3 {
     public static void main(String[] args) {
         List<Integer> numberList = Arrays.asList(1, 2, 3, 3, 4, 5, 5, 5, 6, 7, 8);
 
-        Optional<Integer> sum2 = numberList.stream()
-                .reduce((x , y) -> x * y);
+        numberList.stream()
+                .reduce((x , y) -> x + y)
+                .ifPresent(v -> System.out.println("sum2 = " + v));
         //*.sorted(Comparator.reverseOrder())
 
-        System.out.println(sum2.get());
-
-        OptionalDouble sum = numberList.stream()
-                .distinct()
-                .mapToDouble(i -> i)
-                .average();
+        numberList.stream()
+                .mapToDouble(Integer::intValue)
+                .average()
+                .ifPresent(s -> System.out.println("average = " + s));
         // .skip(1)
         // .limit(1)
 
-        System.out.println(sum.getAsDouble());
 
-
+        List<Apple> appleList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            appleList.add(new Apple(i, "사과_" + i, "색깔_" + i));
+        }
 
         /*Random random = new Random();
 
