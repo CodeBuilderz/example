@@ -10,15 +10,24 @@ public class study3 {
     public static void main(String[] args) {
         List<Integer> numberList = Arrays.asList(1, 2, 3, 3, 4, 5, 5, 5, 6, 7, 8);
 
-        numberList.stream()
-                .reduce((x , y) -> x + y)
-                .ifPresent(v -> System.out.println("sum2 = " + v));
+        int sum2 = numberList.stream()
+                .reduce(0, (x , y) -> x + y);
+                // .ifPresent(v -> System.out.println("sum2 = " + v));
         //*.sorted(Comparator.reverseOrder())
+        System.out.println("sum2 = " + sum2);
+
+        double sum = numberList.stream()
+                .mapToDouble(Integer::intValue)
+                .sum();
+
+        System.out.println("sum2 = " + sum);
 
         numberList.stream()
                 .mapToDouble(Integer::intValue)
                 .average()
                 .ifPresent(s -> System.out.println("average = " + s));
+
+
         // .skip(1)
         // .limit(1)
 
